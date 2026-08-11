@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Notes - Yueying Qiang</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --card-bg: #ffffff;
+            --text-main: #333230;
+            --text-muted: #7a7672;
+            --accent-color: #8c7662;
+            --border-color: #eee9e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px 20px 60px;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo a { font-weight: 600; font-size: 1.2rem; color: var(--accent-color); text-decoration: none; }
+        .nav-links { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); font-weight: 600; }
+
+        .tea-card {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .tea-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            background: #f2ede4;
+            color: var(--accent-color);
+            padding: 2px 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        footer { margin-top: 60px; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo"><a href="index.html">Yueying Qiang</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="tea.html" class="active">Tea</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <h1 style="color:var(--accent-color); font-size:1.6rem; margin-bottom:10px;">🍵 Tea Space</h1>
+        <p style="color:var(--text-muted); margin-bottom:25px;">关于茶道知识、茶叶品类以及下午茶时段的思考碎片。</p>
+
+        <div class="tea-card">
+            <span class="tea-tag">岩茶 / Wuyi Oolong</span>
+            <h3 style="margin:5px 0 10px 0; color:var(--accent-color);">大红袍与岩骨花香</h3>
+            <p>武夷岩茶特有的“岩韵”，来自于独特的丹霞地貌土壤。冲泡时水温要高，第一泡的香气最是高扬...</p>
+        </div>
+
+        <div class="tea-card">
+            <span class="tea-tag">白茶 / White Tea</span>
+            <h3 style="margin:5px 0 10px 0; color:var(--accent-color);">一年茶，三年药，七年宝</h3>
+            <p>白毫银针的温润与清甜，非常适合在科研写代码写累了的下午，泡上一壶慢慢沉淀思绪...</p>
+        </div>
+
+        <footer>© 2026 Yueying Qiang</footer>
+    </div>
+</body>
+</html>
