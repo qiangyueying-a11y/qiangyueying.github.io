@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Yueying Qiang</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --card-bg: #ffffff;
+            --text-main: #333230;
+            --text-muted: #7a7672;
+            --accent-color: #8c7662;
+            --border-color: #eee9e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px 20px 60px;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo a { font-weight: 600; font-size: 1.2rem; color: var(--accent-color); text-decoration: none; }
+        .nav-links { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); font-weight: 600; }
+
+        .pub-card {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .pub-title { font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+        .pub-authors { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 6px; }
+        .pub-venue { font-size: 0.9rem; font-style: italic; color: var(--accent-color); margin-bottom: 12px; }
+        
+        .pub-links a {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 2px 10px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-right: 8px;
+            transition: all 0.2s;
+        }
+
+        .pub-links a:hover { background: var(--accent-color); color: #fff; }
+        footer { margin-top: 60px; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo"><a href="index.html">Yueying Qiang</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="tea.html">Tea</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <h1 style="color:var(--accent-color); font-size:1.6rem; margin-bottom:25px;">Publications</h1>
+
+        <!-- 论文卡片示例 1 -->
+        <div class="pub-card">
+            <div class="pub-title">Neural Mechanisms of Visual Perception in Complex Environments</div>
+            <div class="pub-authors"><strong>Yueying Qiang</strong>, Co-author Name, Advisor Name</div>
+            <div class="pub-venue">Journal of Neuroscience (2026)</div>
+            <div class="pub-links">
+                <a href="#">[PDF]</a>
+                <a href="#">[Code]</a>
+                <a href="#">[BibTeX]</a>
+            </div>
+        </div>
+
+        <!-- 论文卡片示例 2 -->
+        <div class="pub-card">
+            <div class="pub-title">A Data-Driven Approach to Brain Signal Processing</div>
+            <div class="pub-authors">Co-author Name, <strong>Yueying Qiang</strong></div>
+            <div class="pub-venue">Preprint / In Submission (2025)</div>
+            <div class="pub-links">
+                <a href="#">[Preprint]</a>
+            </div>
+        </div>
+
+        <footer>© 2026 Yueying Qiang</footer>
+    </div>
+</body>
+</html>
