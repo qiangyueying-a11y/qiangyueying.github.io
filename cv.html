@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Yueying Qiang</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --card-bg: #ffffff;
+            --text-main: #333230;
+            --text-muted: #7a7672;
+            --accent-color: #8c7662;
+            --border-color: #eee9e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px 20px 60px;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo a { font-weight: 600; font-size: 1.2rem; color: var(--accent-color); text-decoration: none; }
+        .nav-links { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); font-weight: 600; }
+
+        .cv-section {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .cv-section h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 0; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+        
+        .cv-item { margin-bottom: 18px; }
+        .cv-item:last-child { margin-bottom: 0; }
+        .cv-header { display: flex; justify-content: space-between; font-weight: 600; }
+        .cv-sub { color: var(--text-muted); font-size: 0.9rem; }
+
+        footer { margin-top: 60px; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo"><a href="index.html">Yueying Qiang</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="tea.html">Tea</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <h1 style="color:var(--accent-color); font-size:1.6rem; margin-bottom:25px;">Curriculum Vitae</h1>
+
+        <div class="cv-section">
+            <h2>🎓 Education</h2>
+            <div class="cv-item">
+                <div class="cv-header"><span>Ph.D. / Master in Neuroscience</span><span>202X – Present</span></div>
+                <div class="cv-sub">Your University / Institution</div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-header"><span>B.S. in Related Field</span><span>201X – 202X</span></div>
+                <div class="cv-sub">Your University</div>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>🔬 Research Experience</h2>
+            <div class="cv-item">
+                <div class="cv-header"><span>Research Assistant</span><span>2024 – 2025</span></div>
+                <div class="cv-sub">Lab Name, Institute</div>
+                <p style="font-size:0.9rem; margin: 5px 0 0 0;">Focused on EEG/fMRI data processing, python scripts pipeline...</p>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>🏆 Honors & Awards</h2>
+            <div class="cv-item">
+                <div class="cv-header"><span>Academic Excellence Scholarship</span><span>2025</span></div>
+            </div>
+        </div>
+
+        footer>© 2026 Yueying Qiang</footer>
+    </div>
+</body>
+</html>
