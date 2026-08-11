@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Yueying Qiang</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --card-bg: #ffffff;
+            --text-main: #333230;
+            --text-muted: #7a7672;
+            --accent-color: #8c7662;
+            --border-color: #eee9e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px 20px 60px;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo a { font-weight: 600; font-size: 1.2rem; color: var(--accent-color); text-decoration: none; }
+        .nav-links { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); font-weight: 600; }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .contact-list { list-style: none; padding: 0; margin: 20px 0 0 0; }
+        .contact-list li { margin-bottom: 15px; font-size: 1.05rem; }
+        .contact-list a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+        .contact-list a:hover { text-decoration: underline; }
+
+        footer { margin-top: 60px; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo"><a href="index.html">Yueying Qiang</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="diary.html">Diary</a></li>
+                <li><a href="tea.html">Tea</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <h1 style="color:var(--accent-color); font-size:1.6rem; margin-bottom:25px;">Get in Touch</h1>
+
+        <div class="contact-card">
+            <p>欢迎与我交流学术研究、博物馆展览，或是聊聊茶道。可以通过以下方式联系我：</p>
+            <ul class="contact-list">
+                <li>📧 <strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+                <li>💻 <strong>GitHub:</strong> <a href="https://github.com/qiangyueying" target="_blank">@qiangyueying</a></li>
+                <li>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">Yueying Qiang</a></li>
+            </ul>
+        </div>
+
+        <footer>© 2026 Yueying Qiang</footer>
+    </div>
+</body>
+</html>
