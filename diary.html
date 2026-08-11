@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Diary - Yueying Qiang</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --card-bg: #ffffff;
+            --text-main: #333230;
+            --text-muted: #7a7672;
+            --accent-color: #8c7662;
+            --border-color: #eee9e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px 20px 60px;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo a {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .header-title {
+            margin-bottom: 25px;
+        }
+
+        .header-title h1 {
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            margin: 0 0 8px 0;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* 横向滚动展柜 */
+        .scroll-gallery {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 10px 0 20px 0;
+            scroll-behavior: smooth;
+        }
+
+        .gallery-item {
+            flex: 0 0 180px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .gallery-img-placeholder {
+            width: 100%;
+            height: 120px;
+            background: #f2ede4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-title {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* 弹窗小感想 Xiaonotes */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 16px;
+            max-width: 440px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 14px; right: 18px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 导航栏 -->
+        <nav>
+            <div class="nav-logo"><a href="index.html">Yueying Qiang</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="diary.html" class="active">Diary</a></li>
+                <li><a href="tea.html">Tea</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- 页头标题 -->
+        <div class="header-title">
+            <h1>🏛️ Museum Gallery & Xiaonotes</h1>
+            <p>👈 左右滑动探索漫游展柜，点击解锁我的专属随笔与感想 ❤</p>
+        </div>
+
+        <!-- 横向滚动相册 -->
+        <div class="scroll-gallery">
+            <div class="gallery-item" onclick="openNote('🏛️ 故宫玉器展', '今天在玉器馆看到一块温润的白玉，灯光打上去好像有流动的感觉。思维也跟着安静了下来。')">
+                <div class="gallery-img-placeholder">🏛️</div>
+                <div class="gallery-title">故宫玉器展</div>
+            </div>
+
+            <div class="gallery-item" onclick="openNote('🎨 莫奈睡莲展', '印象派对光影的处理太绝了。神经科学里对色彩视觉的处理机制，在这里得到了艺术的升华。')">
+                <div class="gallery-img-placeholder">🎨</div>
+                <div class="gallery-title">莫奈睡莲展</div>
+            </div>
+
+            <div class="gallery-item" onclick="openNote('🏺 青铜器馆漫游', '三千年前的纹饰，依旧拥有震撼人心的力量。站在展柜前呆站了很久。')">
+                <div class="gallery-img-placeholder">🏺</div>
+                <div class="gallery-title">青铜器馆</div>
+            </div>
+
+            <div class="gallery-item" onclick="openNote('📜 古籍手稿特展', '看那些泛黄的纸张与手写笔迹，仿佛穿越时空在和百年前的大脑对话。')">
+                <div class="gallery-img-placeholder">📜</div>
+                <div class="gallery-title">古籍手稿展</div>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Yueying Qiang. Built with ❤ and Minimalist CSS.
+        </footer>
+    </div>
+
+    <!-- 弹窗 -->
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeNote()">&times;</span>
+            <h3 id="modalTitle" style="color:var(--accent-color); margin-top:0;"></h3>
+            <p id="modalBody" style="color:var(--text-main); font-size:0.95rem; line-height:1.7;"></p>
+        </div>
+    </div>
+
+    <script>
+        function openNote(title, content) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = content;
+            document.getElementById('noteModal').style.display = 'flex';
+        }
+
+        function closeNote() {
+            document.getElementById('noteModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('noteModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
