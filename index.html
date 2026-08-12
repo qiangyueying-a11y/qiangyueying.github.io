@@ -24,7 +24,7 @@
         }
 
         .container {
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto;
         }
 
@@ -65,41 +65,102 @@
             font-weight: 600;
         }
 
-        /* 极简 About 区块 */
-        .about-header {
-            margin-bottom: 25px;
+        /* 左右双栏布局 (照片 + 简介) */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 35px;
         }
 
-        .about-header h1 {
+        /* 手机端自动切回单栏 */
+        @media (max-width: 650px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background-color: #f2ede4;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .about-content h1 {
             font-size: 1.8rem;
             color: var(--accent-color);
-            margin: 0 0 8px 0;
+            margin: 0 0 16px 0;
             font-weight: 600;
         }
 
-        .about-header p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        .about-content {
-            background: var(--card-bg);
-            padding: 32px;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
-            font-size: 1.05rem;
-            color: var(--text-main);
-        }
-
         .about-content p {
-            margin-top: 0;
-            margin-bottom: 18px;
+            margin: 0 0 16px 0;
+            font-size: 1rem;
+            color: var(--text-main);
         }
 
         .about-content p:last-child {
             margin-bottom: 0;
+        }
+
+        /* Latest News 动态板块 */
+        .news-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .news-item {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.95rem;
+            display: flex;
+            gap: 12px;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .news-link {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .news-link:hover {
+            color: var(--accent-color);
         }
 
         footer {
@@ -126,16 +187,40 @@
             </ul>
         </nav>
 
-        <!-- 极简 About 主体 -->
-        <div class="about-header">
-            <h1>About Me</h1>
-            <p>Welcome to my personal digital space.</p>
+        <!-- 主体：左照片 + 右文字 -->
+        <div class="about-grid">
+            <!-- 左侧照片墙：你可以把 src 换成你自己的图片文件名路径，比如 "avatar.jpg" -->
+            <img class="profile-photo" src="https://via.placeholder.com/220x300/f2ede4/8c7662?text=Your+Photo" alt="Yueying Qiang Photo">
+
+            <!-- 右侧 About 正文 -->
+            <div class="about-content">
+                <h1>About Me</h1>
+                
+                <p>I am a Master's student in the <a href="https://www.nips.ac.jp/" target="_blank" style="color:var(--accent-color);">Takemura Lab</a> at the National Institute for Physiological Sciences (NIPS), Japan.</p>
+
+                <p>I received my B.A. in Psychology from Nagoya University, focusing on physiological psychology. My undergraduate research involved measuring physiological signals—such as respiration and heart rate patterns—alongside behavioral tasks.</p>
+
+                <p>Broadly, my current research interests lie in human visual perception, white matter pathways, and structure-function connectivity in the human brain.</p>
+
+                <p>In my free time, I enjoy wandering through art museums, exploring teas from around the world, and soaking up the afternoon sunshine. As a Chinese saying goes, <em>"Stealing time out of a busy life makes the leisure all the sweeter."</em></p>
+
+                <p>Thank you for stopping by! I am really happy to meet you here. ✨</p>
+            </div>
         </div>
 
-        <div class="about-content">
-            <p>这里留给你写自己的介绍！直接在这段文字的位置替换成你想写的任意内容即可。</p>
-            
-            <p>如果你想分段，就多复制几个这样子带 <code>&lt;p&gt;</code> 的段落标签，每一段都会有优雅舒适的行间距。</p>
+        <!-- 下方：Latest News 模块 -->
+        <div class="news-section">
+            <div class="news-title">✨ Latest News & Updates</div>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-date">2026.08</span>
+                    <a href="diary.html" class="news-link">Visited <strong>Gifu Castle</strong> and enjoyed the panoramic view — check my <span style="color:var(--accent-color);">Diary</span> for photos! 🏯</a>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2026.04</span>
+                    <a href="diary.html" class="news-link">Explored a rare Wuyi Oolong tea tasting session 🍵</a>
+                </li>
+            </ul>
         </div>
 
         <footer>
