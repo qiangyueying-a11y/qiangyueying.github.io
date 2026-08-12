@@ -18,30 +18,31 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.8;
             margin: 0;
             padding: 20px 20px 60px;
         }
 
         .container {
-            max-width: 760px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
-        /* 顶栏：左边名字，右上角导航栏 */
+        /* 顶栏导航 */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .nav-logo {
+        .nav-logo a {
             font-weight: 600;
             font-size: 1.2rem;
             color: var(--accent-color);
+            text-decoration: none;
         }
 
         .nav-links {
@@ -59,102 +60,46 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a.active {
             color: var(--accent-color);
+            font-weight: 600;
         }
 
-        /* 各个 Section 布局 */
-        section {
-            margin-bottom: 45px;
-            scroll-margin-top: 20px;
+        /* 极简 About 区块 */
+        .about-header {
+            margin-bottom: 25px;
         }
 
-        h2 {
-            font-size: 1.3rem;
+        .about-header h1 {
+            font-size: 1.8rem;
             color: var(--accent-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-bottom: 16px;
+            margin: 0 0 8px 0;
+            font-weight: 600;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-        }
-
-        /* Diary 横向滚动展柜 */
-        .scroll-gallery {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            scroll-behavior: smooth;
-        }
-
-        .gallery-item {
-            flex: 0 0 160px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-        }
-
-        .gallery-img-placeholder {
-            width: 100%;
-            height: 110px;
-            background: #f2ede4;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .gallery-title {
-            font-size: 0.85rem;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        /* 点击出现的弹出小卡片 (Modal Xiaonotes) */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 14px;
-            max-width: 420px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 12px; right: 16px;
-            font-size: 1.3rem;
-            cursor: pointer;
+        .about-header p {
             color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .about-content {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .about-content p {
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
         }
 
         footer {
@@ -169,11 +114,10 @@
 
     <div class="container">
         <!-- 导航栏 -->
-       
         <nav>
-            <div class="nav-logo">Yueying Qiang</div>
+            <div class="nav-logo"><a href="index.html">Yueying Qiang</a></div>
             <ul class="nav-links">
-                <li><a href="index.html">About</a></li>
+                <li><a href="index.html" class="active">About</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="diary.html">Diary</a></li>
@@ -182,105 +126,22 @@
             </ul>
         </nav>
 
-        <!-- About 模块 -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="card">
-                <p>你好！我是 Yueying Qiang。这里是我的数字空间，记录脑科学、神经成像数据分析，以及我在博物馆漫游与品茶时的随想卡片。</p>
-            </div>
-        </section>
+        <!-- 极简 About 主体 -->
+        <div class="about-header">
+            <h1>About Me</h1>
+            <p>Welcome to my personal digital space.</p>
+        </div>
 
-        <!-- Publications 模块 -->
-        <section id="publications">
-            <h2>Publications</h2>
-            <div class="card">
-                <p>📄 论文列表整理中... (明日可加)</p>
-            </div>
-        </section>
-
-        <!-- CV 模块 -->
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <div class="card">
-                <p>🎓 个人简历与教育背景更新中...</p>
-            </div>
-        </section>
-
-        <!-- Diary 横向滚动相册 + 点击弹窗模块 -->
-        <section id="diary">
-            <h2>🏛️ Museum Diary & Xiaonotes</h2>
-            <p style="font-size:0.9rem; color:var(--text-muted);">（👈 左右滑动查看展柜，点击图片解锁我的小感想 ❤）</p>
+        <div class="about-content">
+            <p>这里留给你写自己的介绍！直接在这段文字的位置替换成你想写的任意内容即可。</p>
             
-            <div class="scroll-gallery">
-                <div class="gallery-item" onclick="openNote('🏛️ 故宫玉器展', '今天在玉器馆看到一块温润的白玉，灯光打上去好像有流动的感觉。思维也跟着安静了下来。')">
-                    <div class="gallery-img-placeholder">🏛️</div>
-                    <div class="gallery-title">故宫玉器展</div>
-                </div>
-
-                <div class="gallery-item" onclick="openNote('🎨 莫奈睡莲展', '印象派对光影的处理太绝了。神经科学里对色彩视觉的处理机制，在这里得到了艺术的升华。')">
-                    <div class="gallery-img-placeholder">🎨</div>
-                    <div class="gallery-title">莫奈睡莲展</div>
-                </div>
-
-                <div class="gallery-item" onclick="openNote('🏺 青铜器馆漫游', '三千年前的纹饰，依旧拥有震撼人心的力量。站在展柜前呆站了很久。')">
-                    <div class="gallery-img-placeholder">🏺</div>
-                    <div class="gallery-title">青铜器馆</div>
-                </div>
-
-                <div class="gallery-item" onclick="openNote('📜 古籍手稿特展', '看那些泛黄的纸张与手写笔迹，仿佛穿越时空在和百年前的大脑对话。')">
-                    <div class="gallery-img-placeholder">📜</div>
-                    <div class="gallery-title">古籍手稿展</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tea 模块 -->
-        <section id="tea">
-            <h2>🍵 Tea Notes</h2>
-            <div class="card">
-                <p>岩茶、白茶与下午茶时段的思考角落...</p>
-            </div>
-        </section>
-
-        <!-- Contact 模块 -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="card">
-                <p>📧 Email: <a href="mailto:your-email@example.com" style="color:var(--accent-color);">your-email@example.com</a></p>
-            </div>
-        </section>
+            <p>如果你想分段，就多复制几个这样子带 <code>&lt;p&gt;</code> 的段落标签，每一段都会有优雅舒适的行间距。</p>
+        </div>
 
         <footer>
-            © 2026 Yueying Qiang. Built with ❤ and Minimalist CSS.
+            © 2026 Yueying Qiang. All rights reserved.
         </footer>
     </div>
 
-    <!-- 弹窗组件 -->
-    <div id="noteModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeNote()">&times;</span>
-            <h3 id="modalTitle" style="color:var(--accent-color); margin-top:0;"></h3>
-            <p id="modalBody" style="color:var(--text-main); font-size:0.95rem; line-height:1.6;"></p>
-        </div>
-    </div>
-
-    <script>
-        function openNote(title, content) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalBody').innerText = content;
-            document.getElementById('noteModal').style.display = 'flex';
-        }
-
-        function closeNote() {
-            document.getElementById('noteModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            var modal = document.getElementById('noteModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
